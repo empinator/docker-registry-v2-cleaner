@@ -24,8 +24,7 @@ for i in `cat ${INFILE}`; do
                 if [ "${FOUND}" == "" ]; then
 
                         echo "Deleting Tag ${NAME}:$ev"
-                        DIGEST=`curl -s ${HOST}${NAME}/manifests/${ev} -H "Accept: application/vnd.docker.distribution.manifest.v2+json" | jq -r -c '.config.digest'`
-
+                        DIGEST=`curl -v ${HOST}${NAME}/manifests/${ev} -H "Accept: application/vnd.docker.distribution.manifest.v2+json" 2>&1 | grep Docker-Content-Digest | awk '{print ($3)}'
                         echo curl -s -X DELETE ${HOST}${NAME}/manifests/${DIGEST} >> ${OUTFILE}
 
                 fi
