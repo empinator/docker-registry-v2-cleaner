@@ -1,5 +1,10 @@
 # docker-registry-v2-cleaner
 
+This little script helps you to untag certain versions for a number of docker images in your Docker Registry (v2) in order to let the Gargabe Collector clear some space.
+
+
+# Steps
+
 - Create/edit a file ```image-list.txt``` with images you want to delete
 
   Format: ```imageName:Version1,Version2,...```
