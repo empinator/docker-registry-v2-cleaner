@@ -2,7 +2,7 @@
 
 INFILE="image-list.txt"
 OUTFILE="DELETE-manifest-instructions.sh"
-HOST="https://registry.teamcl.de/v2"
+HOST="https://my.docker.registry.com/v2"
 
 cd . > ${OUTFILE}
 
